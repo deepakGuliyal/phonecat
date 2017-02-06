@@ -1,0 +1,45 @@
+<div class="container">
+			<div class="jumbotron">
+				<form name = "myForm">
+           
+           <div align = "center">
+              <h1>Spice Digital Ltd.</h1>
+              <p>My Shopping List</p>
+            </div>
+            
+          <div class = "container">
+              <div class = "well" ng-if="products.length>0">
+                        <b><li ng-repeat = "x in products">{{x}}
+                           <span ng-click = "removeItem($index)" style = "cursor:pointer;float:right;">x</span>
+                       </li></b>
+              </div>
+                    
+            
+          </div>
+
+
+
+    <div align = "center">
+         <input class="text" placeholder = "Add your items here" name="addItem" ng-model="addItem" /><button class = "button" ng-click = "add()"><b>Add</b></button>
+    </div>
+      
+            <p>{{errormessage}}</p>
+            
+				</form>
+        <div ng-if="removedItems.length>0">
+        <div  class="r1">
+          <p><u>Removed Items:</u></p>
+        
+          <ul>
+                <i><li ng-repeat = "x in removedItems">
+                  <span>{{x}}</span>
+                </li></i>
+          </ul>
+        </div>
+        
+        <div>
+           <p>To See added Items<a href="#addedItems">Click here..</a></p>
+         </div>
+     </div>
+      </div>
+    </div>

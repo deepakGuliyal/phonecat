@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<head>
+  <title>App Through Angular</title>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src = "app.js"></script>
+  <link rel="stylesheet"  href="css/background.css"/>
+ 
+
+</head>
+
+
+<body ng-app = "myApp" ng-controller = "myCtrl" >
+ 
+		<div class="container">
+			<div class="jumbotron" style="position: relative;top: 172px;left: 259px; margin-right: 523px; box-shadow: 0 0 95px black";>
+				<form name = "myForm">
+           
+              <h2 align = "center">My Shopping List</h2>
+            
+          <div class = "container">
+           
+                   <ul>
+                     <div class = "well">
+                        <b><li ng-repeat = "x in products track by $index">{{x}}
+                           <span ng-click = "removeItem($index)" style = "cursor:pointer;">x</span>
+                       </li></b></div>
+                    </ul>
+            
+          </div>
+
+
+         <input placeholder = "Add your items here" ng-model="addItem" />
+           <button ng-click = "add()"><b>Add</b></button>
+            <p>{{errormessage}}</p>
+            
+				</form>
+        <div ng-if="removedItems.length>0">
+        <div>
+          Removed Items:
+        </div>
+        <ul>
+                <li ng-repeat = "x in removedItems">
+                 <span>{{x}}</span>
+                </li>
+            </ul>
+          </div>
+			</div>
+		</div>
+   
+
+</body>
